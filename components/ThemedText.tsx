@@ -19,6 +19,8 @@ export function ThemedText({
 
   return (
     <Text
+      adjustsFontSizeToFit
+      allowFontScaling
       style={[
         { color },
         type === 'default' ? styles.default : undefined,
@@ -35,26 +37,25 @@ export function ThemedText({
 
 const styles = StyleSheet.create({
   default: {
-    fontSize: 16,
-    lineHeight: 24,
+    // fontSize: 16,
+    // lineHeight: 24,
   },
   defaultSemiBold: {
-    fontSize: 16,
-    lineHeight: 24,
-    fontWeight: '600',
+    // fontSize: 16,
+    // lineHeight: 24,
+    // fontWeight: 600,
   },
   title: {
-    fontSize: 32,
-    fontWeight: 'bold',
-    lineHeight: 32,
+    // fontSize: 500,
+    // lineHeight: 500,
   },
   subtitle: {
-    fontSize: 20,
-    fontWeight: 'bold',
+    // fontSize: 20,
+    // fontWeight: 'bold',
   },
   link: {
-    lineHeight: 30,
-    fontSize: 16,
-    color: '#0a7ea4',
+    // lineHeight: 30,
+    // fontSize: 16,
+    // color: '#0a7ea4',
   },
 });

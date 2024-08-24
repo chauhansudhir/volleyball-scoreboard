@@ -29,7 +29,7 @@ export function Team({ color, teamId, title }: ITeamConf) {
                 <ScoreButton point={-1} onClick={handleClick}>-</ScoreButton>
                 <ScoreButton point={1} onClick={handleClick}>+</ScoreButton>
             </View>
-            {isCurrentTeam ? <ThemedText style={styles.title}>current streak: {streak}</ThemedText> : null}
+            <ThemedText style={styles.title}>{isCurrentTeam ? `Streak: ${streak}` : ''}</ThemedText>
         </View>
     );
 }
@@ -40,7 +40,8 @@ const styles = StyleSheet.create({
         height: '100%',
         width: '100%',
         display: 'flex',
-        alignItems: 'center'
+        alignItems: 'center',
+        justifyContent: 'center'
     },
     buttonBox: { flexDirection: 'row', justifyContent: 'center', gap: 10 },
     buttons: {

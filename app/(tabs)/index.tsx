@@ -1,14 +1,38 @@
-import { StyleSheet, View, Button } from 'react-native';
+import { StyleSheet, View, Button, Platform } from 'react-native';
+import { AdEventType, AppOpenAd, TestIds } from 'react-native-google-mobile-ads';
+
 import { useDeviceOrientation } from '@react-native-community/hooks';
 import { ThemedView } from '@/components/ThemedView';
 import { Team } from '@/components/Team';
 import { AWAY_CONF, HOME_CONF } from '@/constants/Common';
 import { resetScore } from '@/data/score'
+import { useEffect } from 'react';
 
+
+const appOpen = AppOpenAd.createForAdRequest(TestIds.APP_OPEN, {
+  requestNonPersonalizedAdsOnly: true,
+  keywords: ['sports']
+});
 
 export default function HomeScreen() {
   const orientation = useDeviceOrientation();
   const isPortrait = orientation === 'portrait';
+  useEffect(() => {
+    // setTimeout(() => appOpen.show(), 1000);
+    appOpen.addAdEventsListener(({ type, payload }) => {
+      if (type === AdEventType.ERROR) {
+        console.log(`${Platform.OS} app open error: ${payload?.message}`);
+      }
+      if (type === AdEventType.LOADED) {
+        appOpen.show()
+      }
+
+    });
+    appOpen.load();
+
+    return () => appOpen.removeAllListeners()
+  }, [])
+
 
   return (
     <ThemedView style={{
