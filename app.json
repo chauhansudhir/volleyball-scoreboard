@@ -1,8 +1,7 @@
 {
   "expo": {
-    "name": "Volleyball Scoreboard",
+    "name": "Volleyball",
     "slug": "volleyball-scoreboard",
-    "displayName": "Volleyball",
     "version": "1.0.0",
     "orientation": "default",
     "icon": "./assets/images/main-icon.png",
@@ -15,7 +14,7 @@
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "y"
+      "bundleIdentifier": "com.sudhirc.volleyball-scoreboard"
     },
     "android": {
       "adaptiveIcon": {
@@ -39,10 +38,6 @@
         }
       ]
     ],
-    "react-native-google-mobile-ads": {
-      "androidAppId": "ca-app-pub-3659763443240462~8135350436",
-      "iosAppId": "ca-app-pub-3659763443240462~9690569714"
-    },
     "experiments": {
       "typedRoutes": true
     },
@@ -53,6 +48,10 @@
       "eas": {
         "projectId": "0819e66a-4228-4ad8-b498-c12bdb8563e5"
       }
+    },
+    "runtimeVersion": "1.0.0",
+    "updates": {
+      "url": "https://u.expo.dev/0819e66a-4228-4ad8-b498-c12bdb8563e5"
     }
   }
 }

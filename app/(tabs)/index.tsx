@@ -24,11 +24,11 @@ export default function HomeScreen() {
         console.log(`${Platform.OS} app open error: ${payload?.message}`);
       }
       if (type === AdEventType.LOADED) {
-        appOpen.show()
+        //appOpen.show()
       }
 
     });
-    appOpen.load();
+    //appOpen.load();
 
     return () => appOpen.removeAllListeners()
   }, [])
